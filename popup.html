@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+body {
+  width: 400px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #000;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 1rem; */
+}
+
+#taskInput {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.controls {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* margin-top: 1rem; */
+}
+.controls > * {
+  margin-right: 0.5rem;
+}
+
+#fontSize {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+span {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+      </style>
+  </head>
+  <body>
+    <h1 id="meTitle">Language Needs Repetition</h1>
+    <div class="input-container">
+    <input type="text" id="taskInput" placeholder="Enter a sentence or a phrase" />
+    <button id="addTask">Add</button>
+    </div>
+    <div class="controls">
+    <button id="toggleDisplay">Start</button>
+    <button id="mute">Mute</button>
+    <input type="number" id="fontSize" value="20">
+  </div>
+    <ul id="taskList"></ul>
+    
+    <script src="popup.js"></script>
+  </body>
+</html>
+

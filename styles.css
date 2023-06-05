@@ -1,0 +1,57 @@
+
+
+#meTitle {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Input and button styles */
+/* #fontSize,
+#taskInput {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+} */
+
+#addTask {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+/* Task list styles */
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 200px; /* Set the desired height here */
+  overflow-y: auto; /* Use 'scroll' if you want to always show the scrollbar */
+}
+
+#meTask {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#meTask span {
+  flex-grow: 1;
+}
+
+#meTask button {
+  margin-left: 5px;
+}
