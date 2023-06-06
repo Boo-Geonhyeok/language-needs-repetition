@@ -8,6 +8,7 @@ const mute = document.getElementById('mute');
 let tasks = [];
 let tasksWithAudio = []
 
+
 chrome.storage.sync.get(['displayActive', 'isMuted', 'fontSize'],  (data) => {
     displayActive = data.displayActive;
     isMuted = data.isMuted;
@@ -36,7 +37,7 @@ function loadTasks() {
     if (data.tasks) {
       tasks = data.tasks
     }
-    
+
     let audioURL;
     chrome.storage.local.get(['tasks'], (data) => {
       if (data.tasks){
@@ -63,7 +64,7 @@ function loadTasks() {
           return {...obj1, audio: audioURL};
         });
       }
-      console.log(tasks);
+
       tasks.forEach((taskObj,index) => addTaskToList(taskObj,index));
     })
   })

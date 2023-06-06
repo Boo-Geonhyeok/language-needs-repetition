@@ -156,8 +156,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 })
 
 if (document.querySelector(".ytp-left-controls")) {
-  console.log('abc');
-recording()
+  recording()
 }
 
 function loadAudio() {
@@ -271,7 +270,6 @@ function loadTasks() {
 chrome.storage.sync.get(['tasks'], (data) => {
   if (data.tasks) {
     tasks = data.tasks;
-    console.log(tasks);
     tasks.forEach((taskObj) => addTaskToList(taskObj));
   }
 });
