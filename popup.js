@@ -47,7 +47,8 @@ function loadTasks() {
         tasksWithAudio = data.tasks
         tasks = tasks.map(obj1 => {
           const obj2 = tasksWithAudio.find(obj2 => obj2.task === obj1.task);
-          if (obj2.hasOwnProperty('audio')) {
+          console.log(obj2);
+          if (obj2 != null && obj2.hasOwnProperty('audio')) {
             const base64Audio = obj2.audio;
             const contentType = 'audio/webm';
             const byteCharacters = atob(base64Audio.split(',')[1]);
