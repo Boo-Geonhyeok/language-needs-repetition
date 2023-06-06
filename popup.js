@@ -29,7 +29,8 @@ chrome.storage.sync.get(['displayActive', 'isMuted', 'fontSize'],  (data) => {
   });
 
 function saveTasks() {
-  chrome.storage.sync.set({ tasks });
+  let onlyTasks = tasks.map(({ audio, ...item }) => item); 
+  chrome.storage.sync.set({ tasks: onlyTasks });
 }
 
 function loadTasks() {
