@@ -296,14 +296,23 @@ dialog.appendChild(li);
 }
 
 function saveAudio(audioBlob, taskObj) {
-const reader = new FileReader();
-reader.readAsDataURL(audioBlob);
-reader.onloadend = () => {
-  let base64Audio = reader.result;
-  taskObj.audio = base64Audio;
-  chrome.storage.local.set({ tasks });
-};
+  const reader = new FileReader();
+  reader.readAsDataURL(audioBlob);
+  reader.onloadend = () => {
+    let base64Audio = reader.result;
+    taskObj.audio = base64Audio;
+    chrome.storage.local.get(['tasks'], (data) => {
+      if (data.tasks) {
+        let localTasks = data.tasks;
+        localTasks.push(taskObj)
+        chrome.storage.local.set({ tasks: localTasks });
+      } else {
+        chrome.storage.local.set({ tasks });
+      }
+    });
+  };
 }
 }
 
+//원인은 sync에서 받아서 local에 저장하기 때문에 audio가 없는 sync가 계속 들어온다는 점
 

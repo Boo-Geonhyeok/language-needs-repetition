@@ -7,6 +7,8 @@ const mute = document.getElementById('mute');
 
 let tasks = [];
 let tasksWithAudio = []
+// chrome.storage.sync.clear()
+// chrome.storage.local.clear()
 
 
 chrome.storage.sync.get(['displayActive', 'isMuted', 'fontSize'],  (data) => {
@@ -104,8 +106,8 @@ function addTaskToList(taskObj, index) {
   const removeButton = document.createElement('button');
   removeButton.textContent = 'Remove';
   removeButton.addEventListener('click', () => {
-    tasks.pop(index)
-    tasksWithAudio.pop(index)
+    tasks.splice(index,1)
+    tasksWithAudio.splice(index,1)
     taskList.removeChild(li);
     chrome.storage.local.set({ tasks: tasksWithAudio });
     saveTasks();
